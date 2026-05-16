@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketplace | TechBridge</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="brand">
+            <span class="brand-icon">◆</span>
+            <span>TechBridge</span>
+        </a>
+
+<nav class="nav-links">
+    <a href="./dashboard.html">Dashboard</a>
+    <a href="./my-residues.html">Meus resíduos</a>
+    <a href="./interests.html">Interesses</a>
+    <a href="./transactions.html">Transações</a>
+    <button class="btn btn-secondary" onclick="logout()">Sair</button>
+</nav> 
+    </header>
+
+    <main class="page">
+        <section class="page-header">
+            <div>
+                <span class="badge">Marketplace industrial</span>
+                <h1>Resíduos disponíveis</h1>
+                <p>Encontre materiais industriais disponíveis para reaproveitamento.</p>
+            </div>
+
+            <div class="actions">
+                <a href="./my-residues.html" class="btn btn-primary">Cadastrar resíduo</a>
+            </div>
+        </section>
+
+        <section class="card" style="margin-bottom: 22px;">
+            <form id="filterForm" class="filters">
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="search" 
+                        placeholder="Buscar por título, material ou cidade"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="materialType" 
+                        placeholder="Material"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="city" 
+                        placeholder="Cidade"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="state" 
+                        placeholder="UF"
+                        maxlength="2"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <input 
+                        type="number" 
+                        id="minQuantity" 
+                        placeholder="Qtd. mínima"
+                        min="1"
+                    />
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Filtrar
+                </button>
+            </form>
+
+            <div class="actions">
+                <button id="clearFiltersButton" class="btn btn-secondary">
+                    Limpar filtros
+                </button>
+            </div>
+        </section>
+
+        <p id="marketplaceMessage" class="message"></p>
+
+        <section id="residuesList" class="grid grid-3"></section>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/marketplace.js"></script>
+</body>
+</html>

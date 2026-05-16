@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interesses | TechBridge</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="brand">
+            <span class="brand-icon">◆</span>
+            <span>TechBridge</span>
+        </a>
+
+<nav class="nav-links">
+    <a href="./dashboard.html">Dashboard</a>
+    <a href="./marketplace.html">Marketplace</a>
+    <a href="./my-residues.html">Meus resíduos</a>
+    <a href="./transactions.html">Transações</a>
+    <button class="btn btn-secondary" onclick="logout()">Sair</button>
+</nav>
+    </header>
+
+    <main class="page">
+        <section class="page-header">
+            <div>
+                <span class="badge">Negociação B2B</span>
+                <h1>Interesses</h1>
+                <p>Acompanhe interesses enviados e recebidos pela sua empresa.</p>
+            </div>
+
+            <div class="actions">
+                <button id="refreshInterestsButton" class="btn btn-secondary">
+                    Atualizar
+                </button>
+                <a href="./marketplace.html" class="btn btn-primary">
+                    Buscar resíduos
+                </a>
+            </div>
+        </section>
+
+        <p id="interestsMessage" class="message"></p>
+
+        <section class="grid grid-2">
+            <article class="card">
+                <h2>Interesses recebidos</h2>
+
+                <p style="color: var(--muted); margin: 10px 0 22px;">
+                    Empresas interessadas nos resíduos publicados por você.
+                </p>
+
+                <div id="receivedInterestsList" class="grid"></div>
+            </article>
+
+            <article class="card">
+                <h2>Interesses enviados</h2>
+
+                <p style="color: var(--muted); margin: 10px 0 22px;">
+                    Resíduos de outras empresas em que você demonstrou interesse.
+                </p>
+
+                <div id="sentInterestsList" class="grid"></div>
+            </article>
+        </section>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/interests.js"></script>
+</body>
+</html>

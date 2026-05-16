@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | TechBridge</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="brand">
+            <span class="brand-icon">◆</span>
+            <span>TechBridge</span>
+        </a>
+
+<nav class="nav-links">
+    <a href="./marketplace.html">Marketplace</a>
+    <a href="./my-residues.html">Meus resíduos</a>
+    <a href="./interests.html">Interesses</a>
+    <a href="./transactions.html">Transações</a>
+    <button class="btn btn-secondary" onclick="logout()">Sair</button>
+</nav>
+    </header>
+
+    <main class="page">
+        <section class="page-header">
+            <div>
+                <span class="badge">Painel empresarial</span>
+                <h1 id="companyName">Carregando...</h1>
+                <p id="companyInfo">Buscando dados da empresa.</p>
+            </div>
+
+            <div class="actions">
+                <a href="./marketplace.html" class="btn btn-secondary">Ver marketplace</a>
+                <a href="./my-residues.html" class="btn btn-primary">Cadastrar resíduo</a>
+            </div>
+        </section>
+
+        <section class="grid grid-3">
+            <article class="card stat-card">
+                <span>Total de resíduos</span>
+                <strong id="totalResidues">0</strong>
+            </article>
+
+            <article class="card stat-card">
+                <span>Disponíveis</span>
+                <strong id="availableResidues">0</strong>
+            </article>
+
+            <article class="card stat-card">
+                <span>Reservados</span>
+                <strong id="reservedResidues">0</strong>
+            </article>
+
+            <article class="card stat-card">
+                <span>Vendidos</span>
+                <strong id="soldResidues">0</strong>
+            </article>
+
+            <article class="card stat-card">
+                <span>Interesses recebidos</span>
+                <strong id="receivedInterests">0</strong>
+            </article>
+
+            <article class="card stat-card">
+                <span>Interesses enviados</span>
+                <strong id="sentInterests">0</strong>
+            </article>
+        </section>
+
+        <section class="grid grid-2" style="margin-top: 22px;">
+            <article class="card">
+                <h2>Negociações</h2>
+                <p style="color: var(--muted); margin: 10px 0 22px;">
+                    Acompanhe vendas e compras concluídas pela sua empresa.
+                </p>
+
+                <div class="grid grid-2">
+                    <div class="stat-card" style="padding: 0;">
+                        <span>Vendas concluídas</span>
+                        <strong id="completedSales">0</strong>
+                    </div>
+
+                    <div class="stat-card" style="padding: 0;">
+                        <span>Compras concluídas</span>
+                        <strong id="completedPurchases">0</strong>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <h2>Impacto ambiental</h2>
+                <p style="color: var(--muted); margin: 10px 0 22px;">
+                    Estimativa inicial baseada nas transações concluídas.
+                </p>
+
+                <div class="grid grid-2">
+                    <div class="stat-card" style="padding: 0;">
+                        <span>Transações concluídas</span>
+                        <strong id="completedTransactions">0</strong>
+                    </div>
+
+                    <div class="stat-card" style="padding: 0;">
+                        <span>CO₂ evitado estimado</span>
+                        <strong><span id="co2Saved">0</span> kg</strong>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="card" style="margin-top: 22px;">
+            <h2>Próximas ações</h2>
+
+            <div class="actions">
+         <a href="./marketplace.html" class="btn btn-secondary">Buscar resíduos</a>
+        <a href="./my-residues.html" class="btn btn-secondary">Gerenciar meus resíduos</a>
+        <a href="./interests.html" class="btn btn-secondary">Ver interesses</a>
+        <a href="./transactions.html" class="btn btn-secondary">Ver transações</a>
+</div>
+            <p id="dashboardMessage" class="message"></p>
+        </section>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

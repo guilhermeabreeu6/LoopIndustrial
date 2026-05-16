@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transações | TechBridge</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="brand">
+            <span class="brand-icon">◆</span>
+            <span>TechBridge</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="./dashboard.html">Dashboard</a>
+            <a href="./marketplace.html">Marketplace</a>
+            <a href="./my-residues.html">Meus resíduos</a>
+            <a href="./interests.html">Interesses</a>
+            <button class="btn btn-secondary" onclick="logout()">Sair</button>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section class="page-header">
+            <div>
+                <span class="badge">Histórico comercial</span>
+                <h1>Transações</h1>
+                <p>Visualize negociações concluídas, vendas realizadas e compras feitas pela sua empresa.</p>
+            </div>
+
+            <div class="actions">
+                <button id="refreshTransactionsButton" class="btn btn-secondary">
+                    Atualizar
+                </button>
+                <a href="./marketplace.html" class="btn btn-primary">
+                    Buscar resíduos
+                </a>
+            </div>
+        </section>
+
+        <section class="grid grid-3" style="margin-bottom: 24px;">
+            <article class="card stat-card">
+                <span>Total de transações</span>
+                <strong id="totalTransactions">0</strong>
+            </article>
+
+            <article class="card stat-card">
+                <span>Vendas concluídas</span>
+                <strong id="salesTransactions">0</strong>
+            </article>
+
+            <article class="card stat-card">
+                <span>Compras concluídas</span>
+                <strong id="purchaseTransactions">0</strong>
+            </article>
+        </section>
+
+        <p id="transactionsMessage" class="message"></p>
+
+        <section class="grid grid-2">
+            <article class="card">
+                <h2>Minhas vendas</h2>
+
+                <p style="color: var(--muted); margin: 10px 0 22px;">
+                    Transações em que sua empresa ofereceu o resíduo.
+                </p>
+
+                <div id="salesList" class="grid"></div>
+            </article>
+
+            <article class="card">
+                <h2>Minhas compras</h2>
+
+                <p style="color: var(--muted); margin: 10px 0 22px;">
+                    Transações em que sua empresa demonstrou interesse e concluiu a negociação.
+                </p>
+
+                <div id="purchasesList" class="grid"></div>
+            </article>
+        </section>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/transactions.js"></script>
+</body>
+</html>
